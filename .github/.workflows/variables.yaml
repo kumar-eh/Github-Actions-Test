@@ -1,0 +1,11 @@
+name: variables
+on:
+  workflow_dispatch:
+env:
+  MY_VARIABLE: ${{ secrets.secret1 }}
+jobs:
+  print-variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Variable
+        run: echo "The value of variable" $MY_VARIABLE
